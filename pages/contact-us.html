@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — AI Generator Content</title>
+    <link rel="icon" type="image/x-icon" href="../assets/Favicon.webp">
+    <link rel="stylesheet" href="../assets/style.css">
+    <style>
+        /* تنسيقات إضافية مخصصة للفورم لجعله جذاباً */
+        .vv-form-group { margin-bottom: 20px; text-align: left; }
+        .vv-form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; }
+        .vv-input { 
+            width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; 
+            font-size: 16px; transition: border-color 0.3s ease; box-sizing: border-box;
+        }
+        .vv-input:focus { border-color: #4f46e5; outline: none; box-shadow: 0 0 5px rgba(79, 70, 229, 0.1); }
+        .vv-submit-btn {
+            background: #4f46e5; color: white; border: none; padding: 15px 30px; 
+            border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; 
+            width: 100%; transition: background 0.3s ease;
+        }
+        .vv-submit-btn:hover { background: #4338ca; }
+        
+        #success-message {
+            display: none; background: #d4edda; color: #155724; padding: 15px;
+            border-radius: 8px; margin-top: 20px; text-align: center; border: 1px solid #c3e6cb;
+        }
+        .vv-contact-info { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; }
+        .vv-contact-email { color: #4f46e5; font-weight: 700; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<header class="vv-header">
+    <div class="vv-container vv-header-inner">
+        <a href="../" class="vv-logo">
+            <img src="../assets/Logo.svg" alt="AI Generator Content Logo">
+            <span>AI Generator Content</span>
+        </a>
+        <nav class="vv-nav">
+            <a href="../">Home</a>
+            <a href="./about-us">About Us</a>
+            <a href="./contact-us" class="active">Contact Us</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="vv-hero">
+        <div class="vv-container">
+            <span class="vv-badge">Get In Touch</span>
+            <h1>Contact Us</h1>
+            <p>Have questions about AI automation or building your digital university? Our team is here to support your journey.</p>
+        </div>
+    </section>
+
+    <section class="vv-section">
+        <div class="vv-container vv-narrow-content">
+            <div class="vv-card-simple" style="padding: 40px;">
+                
+                <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                    <div class="vv-form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="vv-input" placeholder="Your Name" required>
+                    </div>
+                    
+                    <div class="vv-form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" class="vv-input" placeholder="How can we help with your AI content?" required>
+                    </div>
+                    
+                    <div class="vv-form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" class="vv-input" rows="5" placeholder="Tell us about your project or inquiry..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" id="submitBtn" class="vv-submit-btn">Send Message</button>
+                </form>
+
+                <div id="success-message">
+                    ✅ Thank you! Your message has been sent successfully. Our AI experts will get back to you soon.
+                </div>
+
+                <div class="vv-contact-info">
+                    <p>Or reach us directly via email:</p>
+                    <a href="mailto:contact@aigeneratorcontent.com" class="vv-contact-email">contact@aigeneratorcontent.com</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="vv-footer">
+    <div class="vv-container vv-footer-inner">
+        <div class="vv-footer-grid">
+            <div class="vv-footer-main">
+                <div class="vv-footer-brand">
+                    <img src="../assets/Logo.svg" alt="AI Generator Content Logo"> 
+                    <span>AI Generator Content</span>
+                </div>
+                <p class="vv-footer-text">Automate your education content with the power of AI. No cameras, no studios, just professional results.</p>
+            </div>
+            <div class="vv-footer-col">
+                <h4>Company</h4>
+                <a href="./about-us">About Us</a>
+                <a href="./contact-us" class="active">Contact Us</a>
+            </div>
+            <div class="vv-footer-col">
+                <h4>Legal</h4>
+                <a href="./privacy-policy">Privacy Policy</a>
+                <a href="./terms-of-service">Terms of Service</a>
+                <a href="./refund-policy">Refund Policy</a>
+            </div>
+        </div>
+        <div class="vv-footer-bottom">
+            © 2026 AI Generator Content. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+    function handleFormSubmit(event) {
+        event.preventDefault(); 
+        
+        const btn = document.getElementById('submitBtn');
+        const form = document.getElementById('contactForm');
+        const successMsg = document.getElementById('success-message');
+        
+        btn.innerHTML = 'Sending...';
+        btn.style.opacity = '0.7';
+        btn.disabled = true;
+
+        setTimeout(() => {
+            form.style.display = 'none'; 
+            successMsg.style.display = 'block'; 
+        }, 800);
+    }
+</script>
+
+</body>
+</html>
